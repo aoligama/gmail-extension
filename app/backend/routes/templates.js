@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const Templates = require('../models/templates')
+const Template = require('../models/Template')
 
-router.get('/templates', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        const templates = await Templates.find()
+        const templates = await Template.find()
         res.json(templates)
     } catch (error) {
         res.status(500).json({
@@ -13,11 +13,11 @@ router.get('/templates', async (req, res) => {
     }
 })
 
-router.get('/templates/:name', getTemplate, (req, res) => {
+router.get('/:id', getTemplate, (req, res)=> {
     res.json(res.template)
 })
 
-router.post('/', async (req, res) => {
+router.post('/new', async (req, res) => {
     const template = new Template({
         name: req.body.name,
         html: req.body.html
@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.patch('/:id', getTemplate, async (req, res) => {
+router.patch('/edit/:id', getTemplate, async (req, res) => {
     if(req.body.name != null) {
         res.template.name = req.body.name
     }
