@@ -6,21 +6,10 @@ const helmet = require('helmet')
 const compression = require('compression')
 
 mongoose.connect(
-    process.env.MONGODB_URI,
-    {
-        useFindAndModify: false,
-        useUnifiedTopology: true,
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
-        replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
-    },
-    err => {
-        if (err) return console.log('Error: ', err)
-        console.log(
-            'MongoDB Connection -- Ready state is: ',
-            mongoose.connection.readyState
-        )
+    process.env.MONGODB_URI, 
+    { 
+        useNewUrlParser: true, 
+        useUnifiedTopology:true 
     }
 )
 
