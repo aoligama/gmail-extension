@@ -8,7 +8,7 @@ import { NewTemplate } from './views/NewTemplate'
 function App() {
   return (
     <Routes>
-      <Route path='/templates' element={<Templates />} />
+      <Route path='/' element={<Templates />} />
       <Route path='/new-template' element={<NewTemplate />} />
     </Routes>
   )

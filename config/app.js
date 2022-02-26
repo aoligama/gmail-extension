@@ -1,5 +1,5 @@
 const appid = 'sdk_aplechallenge_287a2244e4'
-const endpoint = 'http://localhost:3000/templates'
+const endpoint = 'http://localhost:3000'
 let template
 
 // styles
@@ -27,7 +27,7 @@ InboxSDK.load(2, appid).then(sdk => {
           Awesome Templates
         </h1>
         <iframe 
-          src=${endpoint}/templates 
+          src=${endpoint} 
           title="Some awesome templates"
           style="${iframeStyles}"
         ></iframe>
