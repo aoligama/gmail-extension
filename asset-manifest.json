@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/react-gh-pages/static/js/main.58d04401.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.58d04401.js.map": "/react-gh-pages/static/js/main.58d04401.js.map"
+    "main.js": "/gmail-extension/static/js/main.a678ddbc.js",
+    "index.html": "/gmail-extension/index.html",
+    "main.a678ddbc.js.map": "/gmail-extension/static/js/main.a678ddbc.js.map"
   },
   "entrypoints": [
-    "static/js/main.58d04401.js"
+    "static/js/main.a678ddbc.js"
   ]
 }
