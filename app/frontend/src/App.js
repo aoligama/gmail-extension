@@ -1,19 +1,16 @@
-import { 
-  BrowserRouter, 
+import {
   Routes, 
   Route 
 } from 'react-router-dom'
-import { Templates } from 'pages/Templates'
-import { NewTemplate } from 'pages/NewTemplate'
+import { Templates } from './views/Templates'
+import { NewTemplate } from './views/NewTemplate'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/templates' element={<Templates />} />
-        <Route path='/new-template' element={<NewTemplate />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path='/templates' element={<Templates />} />
+      <Route path='/new-template' element={<NewTemplate />} />
+    </Routes>
   )
 }
 

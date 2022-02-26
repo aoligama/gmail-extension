@@ -1,5 +1,7 @@
+import TemplatesList from '../components/TemplatesList'
+
 export function Templates() {
     return (
-        <h1>Templates Screen</h1>
+        <TemplatesList />
     )
 }

@@ -1,11 +1,10 @@
 const appid = 'sdk_aplechallenge_287a2244e4'
-const endpoint = 'https://dev.to/mikeeus/building-gmailchrome-extension-with-vuejs-and-inboxsdk-20ah'
+const endpoint = 'http://localhost:3000/templates'
 let template
 
 // styles
 const modalStyles = `
-  width: 300px;
-  padding: 24px
+  width: 400px;
 `
 const iframeStyles = `
   border: 1px solid #F2F2F2;
@@ -16,7 +15,7 @@ const titleStyles = `
 `
 
 window.addEventListener('message', event => {
-  if (event.origin !== src && !event.data?.template) return
+  if (event.origin !== endpoint && !event.data?.template) return
   template = event.data.template;
 }, false)
 
