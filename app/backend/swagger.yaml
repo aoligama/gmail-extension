@@ -1,0 +1,98 @@
+swagger: "2.0"
+info:
+  description: "REST API to serve templates to the frontend project"
+  version: "1.0.0"
+  title: "Awesome Templates"
+  
+host: "https://awesome-templates.herokuapp.com"
+basePath: "/"
+
+tags: 
+- name: "Templates"
+  description: "Templates CRUD"
+  
+paths:
+  /templates:
+    get:
+      tags: 
+        - "Templates"
+      summary: "Get all templates"
+      produces:
+        - application/json
+      responses:
+        200:
+          description: "Templates List"
+  /templates/:id:
+    get:
+      tags: 
+        - "Templates"
+      summary: "Get template by name"
+      produces:
+        - application/json
+      responses:
+        200:
+          description: "Template"
+  /templates/new:
+    post:
+      tags: 
+        - "Templates"
+      summary: "Add a new template"
+      parameters:
+        - in: body
+          name: template
+          description: Payload w/ template infos.
+          schema:
+            $ref: '#/definitions/PostTemplate'
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+  /templates/edit/:id:
+    put:
+      tags: 
+        - "Templates"
+      summary: "Update an existing template"
+      parameters:
+        - in: body
+          name: template
+          description: Payload w/ template infos.
+          schema:
+            $ref: '#/definitions/PutTemplate'
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+  /templates/delete/:id:
+    delete:
+      tags: 
+        - "Templates"
+      summary: "Delete an existing template"
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          
+definitions:
+  PostTemplate:
+    type: object
+    required:
+      - name
+      - html
+    properties:
+      name:
+        type: string
+      html:
+        type: string
+  PutTemplate:
+    type: object
+    required:
+      - name
+      - html
+    properties:
+      name:
+        type: string
+      html:
+        type: number
