@@ -5,10 +5,12 @@ let template
 // styles
 const modalStyles = `
   width: 400px;
+  height: 600px;
 `
 const iframeStyles = `
-  border: 1px solid #F2F2F2;
-  border-radius: 7px;
+  width: 100%;
+  height: 100%;
+  border: none;
 `
 const titleStyles = `
   font-weight: 700;
@@ -23,9 +25,6 @@ InboxSDK.load(2, appid).then(sdk => {
   sdk.Compose.registerComposeViewHandler(composeView => {
     const modalView = `
       <div style="${modalStyles}">
-        <h1 style="${titleStyles}"> 
-          Awesome Templates
-        </h1>
         <iframe 
           src=${endpoint} 
           title="Some awesome templates"
