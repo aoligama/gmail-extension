@@ -5,7 +5,7 @@ let template
 // styles
 const modalStyles = `
   width: 400px;
-  height: 600px;
+  height: 500px;
 `
 const iframeStyles = `
   width: 100%;
@@ -43,21 +43,21 @@ InboxSDK.load(2, appid).then(sdk => {
           buttons: [
             {
               type: "PRIMARY_ACTION",
-              text: "Confirm",
+              text: "Apply Template",
               onClick: () => {
                 event.composeView.setBodyHTML(template)
-                modal.close();
-              },
+                modal.close()
+              }
             },
             {
               text: "Cancel",
               onClick: () => {
                 modal.close()
-              },
-            },
-          ],
+              }
+            }
+          ]
         })
-      },
+      }
     })
   })
 })
