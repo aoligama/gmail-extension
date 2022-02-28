@@ -16,6 +16,7 @@ export default function TemplateItem(props) {
     const [selected, setSelected] = useState('')
 
     const handleTemplateSelection = (name, html) => {
+        console.log(name, html)
         if(selected && name === selected) {
             setSelected('')
             window.parent.postMessage({ template: '' }, 'https://mail.google.com/')

@@ -1,20 +1,12 @@
-import React, { useState } from 'react'
-import api from '../../service/api'
+import React from 'react'
 import {
     ContentWrapper,
     Title
 } from './styles'
 import TemplateItem from '../TemplateItem'
-
+import { templates } from '../../templates'
 
 export default function TemplatesList() {
-
-    const [templates, setTemplates] = useState([])
-
-    api.get('/templates').then(({ data }) => {
-        setTemplates(data)
-    })
-
     return (
         <>
             <Title>
@@ -25,7 +17,7 @@ export default function TemplatesList() {
                 templates?.map(template => {
                     return (
                         <ContentWrapper key={template.id}>
-                            <TemplateItem name={template.name} />
+                            <TemplateItem name={template.name} html={template.html} />
                         </ContentWrapper>
                     )
                 })
