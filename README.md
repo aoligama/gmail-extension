@@ -13,6 +13,12 @@ Go to frontend folder
 ```bash
 cd frontend
 ```
+
+Install dependencies
+```bash
+npm install
+```
+
 Start the frontend project
 ```bash
 npm start
